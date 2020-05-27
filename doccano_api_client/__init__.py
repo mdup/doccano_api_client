@@ -404,6 +404,40 @@ class DoccanoClient(_Router):
             data=data
         )
 
+    def post_label(
+            self,
+            project_id: int,
+            doc_id: int,
+            label_id: int
+    ) -> requests.models.Response:
+        """
+        """
+        data = {'label': label_id}
+        return self.post(
+            'v1/projects/{project_id}/docs/{doc_id}/annotations'.format(
+                project_id=project_id,
+                doc_id=doc_id
+            ),
+            data=data
+        )
+
+    def delete_label(
+            self,
+            project_id: int,
+            doc_id: int,
+            label_id: int
+    ) -> requests.models.Response:
+        """
+        """
+        data = {'label': label_id}
+        return self.post(
+            'v1/projects/{project_id}/docs/{doc_id}/annotations'.format(
+                project_id=project_id,
+                doc_id=doc_id
+            ),
+            data=data
+        )
+
     def post_approve_labels(
         self,
         project_id: int,
